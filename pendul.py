@@ -50,10 +50,11 @@ while 1:
             x,y= pygame.mouse.get_pos()
             unghi, lungime = lungime_unghi()
             const=float(lungime/100)
+            amortizare=0.99
             ac=-1/pow(10,const/3)
             pornit = True
     if pornit:
-        velocitate=(velocitate+ac*math.sin(unghi))*0.99
+        velocitate=(velocitate+ac*math.sin(unghi))*amortizare
         unghi += velocitate
         traiectorie(lungime)
     update()
